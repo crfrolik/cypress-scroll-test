@@ -1,0 +1,14 @@
+{
+  "name": "cypress-scroll-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.14.0"
+  }
+}

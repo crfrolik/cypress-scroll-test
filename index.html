@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cypress-scroll-test</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            height: 100px;
+            background-color: #f2f2f2;
+            position: sticky;
+            top: 0;
+        }
+        tr, td {
+            scroll-margin-top: 120px;
+        }
+    </style>
+    <script>
+      const elements = Array.from({ length: 200 }, (_, i) => `
+                <tr id="row${i + 1}">
+                    <td>Row ${i + 1} - Col 1</td>
+                    <td>Row ${i + 1} - Col 2</td>
+                    <td>Row ${i + 1} - Col 3</td>
+                </tr>
+                `).join('');
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('tbody').innerHTML = elements;
+      });
+
+      function scrollIt() {
+        document.querySelector('#row100').scrollIntoView();
+      }
+    </script>
+</head>
+<body>
+    <div>
+        <button onclick="scrollIt()">Scroll Into View</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>One</th>
+                    <th>Two</th>
+                    <th>Three</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+</html>
